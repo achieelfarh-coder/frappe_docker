@@ -104,7 +104,9 @@ services:
     networks:
       - frappe_network
     depends_on:
-      - websocket
+      - websocket:
+          condition: services_started
+        backend: services_started
     deploy:
       restart_policy:
         condition: on-failure
