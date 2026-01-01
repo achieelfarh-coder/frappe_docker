@@ -106,7 +106,7 @@ services:
     depends_on:
       - websocket:
           condition: services_started
-        backend: services_started
+      - backend: services_started
     deploy:
       restart_policy:
         condition: on-failure
